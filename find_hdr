@@ -1,0 +1,20 @@
+#!/bin/bash
+
+find / -type f \
+    -not -path /etc \
+    -not -path /var \
+    -not -path /dev \
+    -not -path /run \
+    -not -path /tmp \
+    -not -path /proc \
+    -not -path /sys \
+    -not -path /opt \
+    -not -path "*/lib/*" \
+    -not -path "*/lib32/*" \
+    -not -path "*/lib64/*" \
+    -not -path '*/bin/*' \
+    -not -path '*/sbin/*' \
+    -not -path '*/cache/*' \
+    -not -path '*/tmp/*' \
+    -not -path '*/.git/*'\
+    -name "$1" 2>/dev/null

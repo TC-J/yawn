@@ -1,0 +1,18 @@
+#!/bin/bash
+
+
+find / -type f \
+    -not -path /etc \
+    -not -path /var \
+    -not -path /dev \
+    -not -path /run \
+    -not -path /tmp \
+    -not -path /proc \
+    -not -path /sys \
+    -not -path /opt \
+    -not -path '*/bin/*' \
+    -not -path '*/sbin/*' \
+    -not -path '*/cache/*' \
+    -not -path '*/tmp/*' \
+    -not -path '*/.git/*'\
+    -name "${1}.a" -o -name "${1}.so" -o -name "${1}.so.*" -o -name "${1}" 2>/dev/null
